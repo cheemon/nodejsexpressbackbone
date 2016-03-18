@@ -1,0 +1,24 @@
+<div class="htmleaf-container">
+
+    <div class="container kv-main">
+        <div class="page-header">
+            <h2>相册添加<small></h2>
+        </div>
+
+        <hr>
+        <form  id="albumForm">
+            <label>名称：</label>
+            <input   class="file" name="name"  type="text" >
+            <label>描述：</label>
+            <input   class="file" name="description"  type="text" >
+            <button type="submit" class="btn btn-primary">保存</button>
+            <button type="reset" class="btn btn-default">取消</button>
+        </form>
+        <hr>
+    </div>
+    <ul>
+        <% _.each(model, function(item) { %>
+        <li><a href="#admin!photo/<%= item._id%>"><img src="<%= item.coverpic%>"/><%= item.name%></a></li>
+        <% }); %>
+    </ul>
+</div>

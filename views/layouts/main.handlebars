@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+    <title>{{{title}}}</title>
+    <link rel='stylesheet' href='/stylesheets/style.css'/>
+
+    {{!link(rel='stylesheet', href='/stylesheets/bootstrap.min.css')}}
+    <link rel='stylesheet' href='/stylesheets/fileinput.css'/>
+    <script type='text/javascript' src='js/libs/jquery-1.11.3.min.js'></script>
+    <script data-main='js/boot' type="text/javascript" src="js/libs/require.js"></script>
+</head>
+<body>
+<header id="headerbar">
+    <i id="navArrow" class="icon icon-list fl mg_t10"></i>
+    <i id="navArrow" class="icon icon-user fr mg_t8"></i>
+</header>
+<div id="skel-panels-defaultWrapper">
+    {{{body}}}
+</div>
+<div id="sidePanel" class="skel-panels-panel skel-panels-panel-left">
+    <ul class="leftnav">
+        <li><a href="#articleadd">发布文章</a></li>
+        <li><a href="#profile/1">我的资料</a></li>
+        <li><a href="#profile/1">关于</a></li>
+        <li><a href="#profile/1">设置</a></li>
+        <li><a href="#profile/1">退出</a></li>
+    </ul>
+</div>
+</body>
+</html>
+<script type='text/javascript'>
+    var subPageArr = ["profile"],
+            noTopBarArr = ['login', 'register'];
+    window.onhashchange = function () {
+        var hashArr = window.location.hash.split('/');
+        var firstHash = hashArr.length > 0 ? hashArr[0].replace('#', '').toLocaleLowerCase() : null;
+        if (null != firstHash) {
+            if ($.inArray(firstHash, subPageArr) >= 0) {
+
+                if (!$('#headerbar').is(':visible')) {
+                    $('#headerbar').show();
+                }
+                $('#headerbar').html('<i id="navArrow" onclick="history.go(-1);" class="icon icon-arrowleft mg_t10 fl"></i>');
+            } else if ($.inArray(firstHash, noTopBarArr) > -1) {
+                $('#headerbar').hide();
+            } else {
+                if (!$('#headerbar').is(':visible')) {
+                    $('#headerbar').show();
+                }
+                $('#headerbar').html('<i id="navArrow"   class="icon icon-list mg_t10 fl"></i><i id="navUser"   class="icon icon-user mg_t10 fr"></i>');
+            }
+        }
+
+    }
+    /*left nav animation*/
+    $(document).on('touchstart', '#navArrow', function () {
+
+        $('#sidePanel,#skel-panels-defaultWrapper,#headerbar').css({
+            transition: 'transform 0.25s ease-in-out',
+            transform: 'translate(150px, 0px)'
+        });
+    });
+    $(document).on('touchstart', '#skel-panels-defaultWrapper', function () {
+
+        $('#sidePanel,#skel-panels-defaultWrapper,#headerbar,.leftnav li').css({
+            transition: 'transform 0.25s ease-in-out',
+            transform: 'translate(0px, 0px)'
+        });
+    });
+
+</script>

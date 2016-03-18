@@ -1,0 +1,76 @@
+<div class="container_bg">
+    <div class="wrapper10 mg_t20">
+        <div class="postlist">
+            <% _.each(model, function(item) { %>
+            <article class="post">
+                <% if (item.pic!=null&&item.pic!="" ) { %>
+                <div class="pic"><a href="#article/<%= item._id%>"><img src="images/demo.jpg"/></a></div>
+                <% }%>
+                <div class="content">
+                    <h1><a href="#article/<%= item._id%>"><%= item.title%></a></h1>
+                    <p>
+                        <a href="#article/<%= item._id%>">
+                            <%= item.content%>
+                        </a>
+                    </p>
+
+                    <div class="postinfo">
+                        <div class="avatar">
+                            <a href="#homepage/1"><img src="images/avatar.png"/></a>
+                        </div>
+                        <div class="info">
+                            <span class="user">Cheemon</span>
+
+                            <p><i class="icon icon-time"></i>&nbsp;21小时前&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i
+                                    class="icon icon-location"></i>&nbsp;北京</p>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <% }); %>
+            <article class="post">
+                <div class="pic"><img src="images/demo.jpg"/></div>
+                <div class="content">
+                    <h1>标题</h1>
+
+                    <p>
+                        我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容</p>
+
+                    <div class="postinfo">
+                        <div class="avatar">
+                            <a href="#homepage/1"><img src="images/avatar.png"/></a>
+                        </div>
+                        <div class="info">
+                            <span class="user">Cheemon</span>
+
+                            <p><i class="icon icon-time"></i>&nbsp;21小时前&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i
+                                    class="icon icon-location"></i>&nbsp;北京</p>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <article class="post">
+                <div class="content">
+                    <h1>标题</h1>
+
+                    <p>
+                        我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容</p>
+
+                    <div class="postinfo">
+                        <div class="avatar">
+                            <a href="#homepage/1"><img src="images/avatar.png"/></a>
+                        </div>
+                        <div class="info">
+                            <span class="user">Cheemon</span>
+
+                            <p><i class="icon icon-time"></i>&nbsp;21小时前&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i
+                                    class="icon icon-location"></i>&nbsp;北京</p>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <p class="loadmore"><a href="javascript:void()">加载更多</a></p>
+
+        </div>
+    </div>
+</div>

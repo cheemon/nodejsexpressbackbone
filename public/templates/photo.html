@@ -1,0 +1,23 @@
+<div class="htmleaf-container">
+
+    <div class="container kv-main">
+        <div class="page-header">
+            <h2>图片上传<small></h2>
+        </div>
+        <form id="AddForm" enctype="multipart/form-data">
+
+            <input type="hidden"  name="albumid" value= <%=ablumid%>  />
+
+
+            <hr>
+            <div class="form-group">
+                <input id="file-1" type="file" multiple class="file" data-overwrite-initial="false" data-min-file-count="1">
+            </div>
+            <button id="submitBtn" class="btn btn-primary">上传</button>
+        </form>
+        <% _.each(collection, function(item) { %>
+        <li><img src="<%= item.url%>" /><%=item.url%></li>
+        <% }); %>
+    </div>
+
+</div>
